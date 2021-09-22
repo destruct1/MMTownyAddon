@@ -1,0 +1,6 @@
+name: MythicMobsTownyAddon
+version: '${project.version}'
+main: com.ehhthan.mythicmobstownyaddon.MythicMobsTownyAddon
+api-version: 1.17
+depend: [ MythicMobs, Towny ]
+authors: [ Ehhthan ]
