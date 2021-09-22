@@ -32,16 +32,16 @@ public class AtWarCondition extends SkillCondition implements IEntityComparisonC
         if (entity instanceof Player && target instanceof Player) {
             Nation entityNation = townyAPI.getResidentNationOrNull(townyAPI.getResident((Player) entity));
             Nation targetNation = townyAPI.getResidentNationOrNull(townyAPI.getResident((Player) target));
-            if (townyAPI.)
 
+            return !atWar(entityNation, targetNation);
         } else
             return true;
     }
 
 
     public boolean atWar(Nation first, Nation second) {
-        if (first == null || second == null)
+        if (first == null || second == null || first.isAlliedWith(second))
             return false;
-        townyAPI.
+
     }
 }
