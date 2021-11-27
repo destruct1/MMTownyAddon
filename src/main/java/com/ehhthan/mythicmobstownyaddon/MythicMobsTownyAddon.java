@@ -1,31 +1,30 @@
 package com.ehhthan.mythicmobstownyaddon;
 
 import com.ehhthan.mythicmobstownyaddon.condition.AtWarCondition;
-import io.lumine.xikage.mythicmobs.MythicMobs;
+import com.ehhthan.mythicmobstownyaddon.condition.InWildernessCondition;
+import com.palmergames.bukkit.towny.TownyAPI;
 import io.lumine.xikage.mythicmobs.api.bukkit.events.MythicConditionLoadEvent;
-import io.lumine.xikage.mythicmobs.skills.SkillCondition;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MythicMobsTownyAddon extends JavaPlugin implements Listener {
-    private static MythicMobsTownyAddon INSTANCE;
+    private TownyAPI townyAPI;
 
     @Override
     public void onEnable() {
-        INSTANCE = this;
-
+        this.townyAPI = TownyAPI.getInstance();
         Bukkit.getPluginManager().registerEvents(this, this);
-    }
-
-    public static MythicMobsTownyAddon getInstance() {
-        return INSTANCE;
     }
 
     @EventHandler
     public void onMythicConditionLoad(MythicConditionLoadEvent event) {
         if (event.getConditionName().equalsIgnoreCase("atWar"))
-            event.register(new AtWarCondition(event.getConfig()));
+            event.register(new AtWarCondition(townyAPI, event.getConfig()));
+
+        if (event.getConditionName().equalsIgnoreCase("inWild")
+        || event.getConditionName().equalsIgnoreCase("inWilderness"))
+            event.register(new InWildernessCondition(townyAPI, event.getConfig()));
     }
 }
