@@ -1,6 +1,7 @@
 package com.ehhthan.mythicmobstownyaddon;
 
 import com.ehhthan.mythicmobstownyaddon.condition.AtWarCondition;
+import com.ehhthan.mythicmobstownyaddon.condition.InMyTownCondition;
 import com.ehhthan.mythicmobstownyaddon.condition.InWildernessCondition;
 import com.palmergames.bukkit.towny.TownyAPI;
 import io.lumine.xikage.mythicmobs.api.bukkit.events.MythicConditionLoadEvent;
@@ -26,5 +27,8 @@ public final class MythicMobsTownyAddon extends JavaPlugin implements Listener {
         if (event.getConditionName().equalsIgnoreCase("inWild")
         || event.getConditionName().equalsIgnoreCase("inWilderness"))
             event.register(new InWildernessCondition(townyAPI, event.getConfig()));
+
+        if (event.getConditionName().equalsIgnoreCase("inMyTown"))
+            event.register(new InMyTownCondition(townyAPI, event.getConfig()));
     }
 }
