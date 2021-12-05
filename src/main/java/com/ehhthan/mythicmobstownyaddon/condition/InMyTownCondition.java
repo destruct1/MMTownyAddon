@@ -23,6 +23,5 @@ public class InMyTownCondition extends SkillCondition implements IEntityConditio
             return false;
         }
         return townOrNull.hasResident(BukkitAdapter.adapt(abstractEntity.asPlayer()).getUniqueId());
-
     }
 }
