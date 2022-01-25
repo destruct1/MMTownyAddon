@@ -1,6 +1,6 @@
-name: TargetMMAddon
+name: MythicMobsTownyAddon
 version: '${project.version}'
-main: com.ehhthan.mythicmobstownyaddon.TargetMMAddon
+main: com.ehhthan.mythicmobstownyaddon.MythicMobsTownyAddon
 api-version: 1.16
-depend: [ MythicMobs ]
+depend: [ MythicMobs, Towny ]
 authors: [ Ehhthan ]
