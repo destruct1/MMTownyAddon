@@ -3,13 +3,13 @@ package com.ehhthan.mythicmobstownyaddon.condition;
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.Town;
-import io.lumine.xikage.mythicmobs.adapters.AbstractEntity;
-import io.lumine.xikage.mythicmobs.adapters.bukkit.BukkitAdapter;
-import io.lumine.xikage.mythicmobs.io.MythicLineConfig;
-import io.lumine.xikage.mythicmobs.skills.SkillCondition;
-import io.lumine.xikage.mythicmobs.skills.conditions.IEntityCondition;
+import io.lumine.mythic.api.adapters.AbstractEntity;
+import io.lumine.mythic.bukkit.BukkitAdapter;
+import io.lumine.mythic.api.config.MythicLineConfig;
+import io.lumine.mythic.core.skills.SkillCondition;
+import io.lumine.mythic.api.skills.conditions.IEntityComparisonCondition;
 
-public class InMyTownCondition extends SkillCondition implements IEntityCondition {
+public class InMyTownCondition extends SkillCondition implements IEntityComparisonCondition {
     private final TownyAPI townyAPI;
 
     public InMyTownCondition(TownyAPI api, MythicLineConfig config) {
