@@ -7,9 +7,9 @@ import io.lumine.mythic.api.adapters.AbstractEntity;
 import io.lumine.mythic.bukkit.BukkitAdapter;
 import io.lumine.mythic.api.config.MythicLineConfig;
 import io.lumine.mythic.core.skills.SkillCondition;
-import io.lumine.mythic.api.skills.conditions.IEntityComparisonCondition;
+import io.lumine.mythic.api.skills.conditions.IEntityCondition;
 
-public class InMyTownCondition extends SkillCondition implements IEntityComparisonCondition {
+public class InMyTownCondition extends SkillCondition implements IEntityCondition {
     private final TownyAPI townyAPI;
 
     public InMyTownCondition(TownyAPI api, MythicLineConfig config) {
